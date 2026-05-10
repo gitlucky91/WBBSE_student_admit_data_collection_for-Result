@@ -11,17 +11,32 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 100%);
+            background: linear-gradient(135deg, #bced0a 0%, #0dadd0 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
         }
+
+        #submitBtn {
+            padding: 50 100 50;
+        }
+
+        span {
+            color: red;
+        }
+
+        .imglogo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .form-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            padding: 2.5rem;
+            padding: 1rem;
+            padding-bottom: 20px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             width: 100%;
@@ -31,13 +46,22 @@
             color: #1e293b;
             text-align: center;
             margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            font-family: 'Times New Roman', Times, serif;
         }
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #0552cf;
+            text-align: center;
+            font-size: 1 rem;
+        }
+
         .input-group { margin-bottom: 1.2rem; }
         label { display: block; margin-bottom: 5px; font-weight: 600; color: #475569; }
         input {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid #cbd5e1;
             border-radius: 8px;
             box-sizing: border-box;
@@ -56,7 +80,7 @@
             cursor: pointer;
             transition: 0.3s;
         }
-        button:hover { background: #1d4ed8; }
+        button:hover { background: #1241c3; }
 
         /* Popup Styles */
         #popup {
@@ -67,7 +91,7 @@
             background: white;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             text-align: center;
             z-index: 100;
         }
@@ -83,22 +107,27 @@
 <body>
 
 <div class="form-card">
-    <h2>West Bengal Board of Secondary Education Result 2026</h2>
+    <div class="imglogo">
+        <img src="wbbselogo.png" width="60" alt="A descriptive text of the image">
+    </div>
+
+    <h2>West Bengal Board of Secondary Education</h2>
+    <h3>Result 2026</h3>
     <form id="resultForm">
         <div class="input-group">
-            <label>Student's Name*</label>
+            <label>Student's Name <span>*</span></label>
             <input type="text" name="name" placeholder="Enter Full Name" required>
         </div>
         <div class="input-group">
-            <label>Roll Number* (11 Digits)</label>
+            <label>Roll Number <span>*</span> (11 Digits)</label>
             <input type="text" name="roll" pattern="^[0-9]{6}[A-Za-z]{1}[0-9]{4}$" placeholder="Example: 123456N1234" title="Enter 11 digits: 6 numbers, 1 letter, 4 numbers" required>
         </div>
         <div class="input-group">
-            <label>Date of Birth* (As per Admit)</label>
+            <label>Date of Birth <span>*</span> (As per Admit)</label>
             <input type="date" name="dob" required>
         </div>
         <div class="input-group">
-            <label>WhatsApp Number*</label>
+            <label>WhatsApp Number <span>*</span></label>
             <input type="tel" name="whatsapp" placeholder="9876543210" required>
         </div>
         <button type="submit" id="submitBtn">Check Result</button>
